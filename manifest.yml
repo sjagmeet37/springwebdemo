@@ -1,0 +1,13 @@
+applications:
+- name: springwebdemo
+  memory: 1G
+  path: target/springwebdemo-0.0.1-SNAPSHOT.jar
+  random-route: true
+  buildpacks:
+    - https://github.com/cloudfoundry/java-buildpack.git
+  env:
+      JBP_CONFIG_OPEN_JDK_JRE: '{ memory_calculator: { stack_threads: 200 } }'
+      JBP_CONFIG_SPRING_AUTO_RECONFIGURATION: '{enabled: false}'
+      MALLOC_ARENA_MAX: 4
+      JBP_CONFIG_COMPONENTS: '{ jres: ["JavaBuildpack::Jre::SapMachineJRE"] }'
+      JBP_CONFIG_SAP_MACHINE_JRE: '{ jre: { version: "11.+" } }'
