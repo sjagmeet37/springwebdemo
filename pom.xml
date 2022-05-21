@@ -63,6 +63,12 @@
 			<artifactId>h2</artifactId>
 			<scope>test</scope>
 		</dependency>
+<!--		required service to read vcap properties from cf-->
+		<dependency>
+			<groupId>io.pivotal.cfenv</groupId>
+			<artifactId>java-cfenv-boot</artifactId>
+			<version>2.4.0</version>
+		</dependency>
 	</dependencies>
 
 	<build>
